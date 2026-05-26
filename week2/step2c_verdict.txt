@@ -1,0 +1,19 @@
+========================================================================
+STEP 2C VERDICT — Is log1p(temporal) a universal fix?
+========================================================================
+
+Mean log_gain across 3 experiments (f1_logtmp − f1_full):
+  NB    log_gain=-0.002   logtmp_is_best on 1/3 exps   — neutral
+  RF    log_gain=-0.009   logtmp_is_best on 0/3 exps   — neutral
+  SVM   log_gain=+0.469   logtmp_is_best on 3/3 exps   ✓ HELPS
+  DNN   log_gain=+0.009   logtmp_is_best on 2/3 exps   — neutral
+  DT    log_gain=-0.004   logtmp_is_best on 0/3 exps   — neutral
+
+Helps:   SVM
+Hurts:   (none)
+Neutral: NB, RF, DNN, DT
+
+⚠ SVM-PRIMARY RESCUE — log1p helps SVM strongly but few others.
+   Story: "Two-part finding. SVM fails due to scale (fixed by log1p).
+    Tree-based methods fail for a different reason (correlated-feature redundancy),
+    requiring full L-coordination removal."

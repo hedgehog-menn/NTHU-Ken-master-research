@@ -1,0 +1,13 @@
+measure,variant,sock_mean,nonsock_mean,sock_median,nonsock_median,n_sock,n_nonsock,u_stat,p_value,direction
+pronouns_per_thread,full,0.4106,0.4476,0.0,0.0526,140,140,7685.5,0.0004808522420305408,sock < non-sock
+markers_per_thread,trimmed,2.9624,4.8159,1.2,2.0,132,102,5746.0,0.054351331307269546,sock < non-sock
+particles_per_thread,trimmed,2.508,4.1913,1.0,1.7083,132,102,5763.5,0.05872503814126446,sock < non-sock
+pronouns_per_thread,trimmed,0.4065,0.392,0.0,0.0,132,102,5960.5,0.06364474573936008,sock > non-sock
+markers_per_thread,full,3.0363,4.133,1.4286,1.7434,140,140,8696.0,0.10283292779433292,sock < non-sock
+particles_per_thread,full,2.5752,3.5036,1.043,1.3921,140,140,8855.0,0.1625948809340736,sock < non-sock
+median_markers_per_post,trimmed,1.8674,2.2647,1.0,1.75,132,102,6103.0,0.2146468791429661,sock < non-sock
+markers_per_1k_chars,full,11.9002,10.3642,10.1956,7.9376,140,140,10601.5,0.2369041040111287,sock > non-sock
+median_rate_per_1k_chars,full,11.4812,9.9098,9.6566,7.2136,140,140,10477.0,0.31509709556288756,sock > non-sock
+median_markers_per_post,full,1.8714,1.9536,1.0,1.0,140,140,9516.0,0.6703599379920939,sock < non-sock
+markers_per_1k_chars,trimmed,12.031,11.7697,10.4126,9.5089,132,102,6887.5,0.7626203834056735,sock > non-sock
+median_rate_per_1k_chars,trimmed,11.6219,11.5872,9.6566,8.5672,132,102,6720.0,0.9820389592889138,sock > non-sock

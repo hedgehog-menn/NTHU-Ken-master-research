@@ -1,0 +1,14 @@
+======================================================================
+STEP 1B DECISION
+======================================================================
+
+✅ REGISTER SIGNAL CONFIRMED (1 measures at p < 0.01)
+
+The register signal survives normalization. The unified story for the thesis:
+  "Sockpuppets exhibit both lower posting volume AND lower per-activity
+   politeness rates. Both signals contribute independently."
+
+Significant measures (p < 0.01):
+  pronouns_per_thread            (full   )  sock=0.411 vs non-sock=0.448  (sock < non-sock, p=0.0004809)
+
+======================================================================

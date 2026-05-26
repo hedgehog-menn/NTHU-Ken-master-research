@@ -1,0 +1,85 @@
+========================================================================
+STEP 2 CULPRIT ANALYSIS
+========================================================================
+
+--- Experiment 1 ---
+  DT: full=0.172  drop_all=0.680  (full rescue Δ=+0.508)
+    drop_coord-dim     f1=0.248  Δ_full=+0.076  ( 15.0% of rescue)
+    drop_algo-dim      f1=0.248  Δ_full=+0.076  ( 15.0% of rescue)
+    drop_composite     f1=0.245  Δ_full=+0.073  ( 14.3% of rescue)
+    drop_engagement    f1=0.286  Δ_full=+0.114  ( 22.4% of rescue)
+    drop_temporal      f1=0.296  Δ_full=+0.124  ( 24.4% of rescue)
+
+  SVM: full=0.244  drop_all=0.653  (full rescue Δ=+0.408)
+    drop_coord-dim     f1=0.244  Δ_full=+0.000  (  0.0% of rescue)
+    drop_algo-dim      f1=0.244  Δ_full=+0.000  (  0.0% of rescue)
+    drop_composite     f1=0.246  Δ_full=+0.002  (  0.5% of rescue)
+    drop_engagement    f1=0.235  Δ_full=-0.009  ( -2.2% of rescue)
+    drop_temporal      f1=0.604  Δ_full=+0.360  ( 88.1% of rescue)  ⟵ explains ≥80% of rescue
+
+  RF: full=0.215  drop_all=0.635  (full rescue Δ=+0.420)
+    drop_coord-dim     f1=0.258  Δ_full=+0.043  ( 10.3% of rescue)
+    drop_algo-dim      f1=0.215  Δ_full=+0.000  (  0.0% of rescue)
+    drop_composite     f1=0.254  Δ_full=+0.039  (  9.3% of rescue)
+    drop_engagement    f1=0.290  Δ_full=+0.075  ( 17.9% of rescue)
+    drop_temporal      f1=0.271  Δ_full=+0.056  ( 13.3% of rescue)
+
+
+--- Experiment 2 ---
+  DT: full=0.245  drop_all=0.667  (full rescue Δ=+0.422)
+    drop_coord-dim     f1=0.324  Δ_full=+0.079  ( 18.7% of rescue)
+    drop_algo-dim      f1=0.274  Δ_full=+0.029  (  6.8% of rescue)
+    drop_composite     f1=0.272  Δ_full=+0.027  (  6.4% of rescue)
+    drop_engagement    f1=0.231  Δ_full=-0.014  ( -3.3% of rescue)
+    drop_temporal      f1=0.232  Δ_full=-0.013  ( -3.2% of rescue)
+
+  SVM: full=0.343  drop_all=0.692  (full rescue Δ=+0.349)
+    drop_coord-dim     f1=0.343  Δ_full=+0.000  (  0.0% of rescue)
+    drop_algo-dim      f1=0.343  Δ_full=+0.000  (  0.0% of rescue)
+    drop_composite     f1=0.000  Δ_full=-0.343  (-98.1% of rescue)
+    drop_engagement    f1=0.357  Δ_full=+0.014  (  4.1% of rescue)
+    drop_temporal      f1=0.683  Δ_full=+0.340  ( 97.2% of rescue)  ⟵ explains ≥80% of rescue
+
+  RF: full=0.312  drop_all=0.678  (full rescue Δ=+0.366)
+    drop_coord-dim     f1=0.309  Δ_full=-0.003  ( -0.9% of rescue)
+    drop_algo-dim      f1=0.364  Δ_full=+0.051  ( 14.0% of rescue)
+    drop_composite     f1=0.309  Δ_full=-0.003  ( -0.9% of rescue)
+    drop_engagement    f1=0.364  Δ_full=+0.051  ( 14.0% of rescue)
+    drop_temporal      f1=0.263  Δ_full=-0.050  (-13.6% of rescue)
+
+
+--- Experiment 3 ---
+  DT: full=0.148  drop_all=0.640  (full rescue Δ=+0.492)
+    drop_coord-dim     f1=0.148  Δ_full=+0.000  (  0.0% of rescue)
+    drop_algo-dim      f1=0.295  Δ_full=+0.147  ( 29.9% of rescue)
+    drop_composite     f1=0.145  Δ_full=-0.003  ( -0.5% of rescue)
+    drop_engagement    f1=0.203  Δ_full=+0.055  ( 11.2% of rescue)
+    drop_temporal      f1=0.038  Δ_full=-0.110  (-22.3% of rescue)
+
+  SVM: full=0.135  drop_all=0.653  (full rescue Δ=+0.518)
+    drop_coord-dim     f1=0.135  Δ_full=+0.000  (  0.0% of rescue)
+    drop_algo-dim      f1=0.274  Δ_full=+0.139  ( 26.8% of rescue)
+    drop_composite     f1=0.184  Δ_full=+0.049  (  9.5% of rescue)
+    drop_engagement    f1=0.228  Δ_full=+0.093  ( 17.9% of rescue)
+    drop_temporal      f1=0.707  Δ_full=+0.572  (110.3% of rescue)  ⟵ explains ≥80% of rescue
+
+  RF: full=0.246  drop_all=0.653  (full rescue Δ=+0.407)
+    drop_coord-dim     f1=0.182  Δ_full=-0.064  (-15.7% of rescue)
+    drop_algo-dim      f1=0.271  Δ_full=+0.026  (  6.3% of rescue)
+    drop_composite     f1=0.203  Δ_full=-0.042  (-10.4% of rescue)
+    drop_engagement    f1=0.203  Δ_full=-0.042  (-10.4% of rescue)
+    drop_temporal      f1=0.115  Δ_full=-0.130  (-32.0% of rescue)
+
+
+========================================================================
+AGGREGATE: average fraction of rescue explained per subgroup
+(across damaged classifiers DT/SVM/RF × 3 experiments)
+========================================================================
+  temporal        29.1%  ████████
+  algo-dim        11.0%  ███
+  engagement       8.0%  ██
+  coord-dim        3.0%  
+  composite       -7.8%  
+
+❌ DAMAGE DISTRIBUTED: no single subgroup explains ≥50% of the rescue.
+   The Week 1 finding stays at family granularity. Cannot pinpoint a smaller set.
